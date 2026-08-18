@@ -44,6 +44,7 @@ a {
 .nav,
 .hero,
 .info-grid,
+.feature-section,
 .document,
 .site-footer {
   width: min(1120px, calc(100% - 32px));
@@ -201,7 +202,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  padding: 0 0 56px;
+  padding: 0 0 18px;
 }
 
 .info-card {
@@ -221,6 +222,45 @@ h2 {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1fr);
+  gap: 36px;
+  align-items: start;
+  padding: 38px 0 72px;
+}
+
+.section-copy h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.section-copy p {
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  min-height: 58px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.62);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .document {
@@ -299,12 +339,17 @@ h2 {
   .info-grid {
     grid-template-columns: 1fr;
   }
+
+  .feature-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
   .nav,
   .hero,
   .info-grid,
+  .feature-section,
   .document,
   .site-footer {
     width: min(100% - 24px, 1120px);
@@ -328,5 +373,9 @@ h2 {
   .site-footer {
     justify-content: center;
     padding: 22px 0;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
   }
 }
